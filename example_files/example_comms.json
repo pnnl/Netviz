@@ -1,0 +1,154 @@
+{
+  "HELICSFederateName": "Example",
+  "NNDVersion": "0.3.1",
+  "network": {
+    "nodes": {
+      "node_1": {
+        "applications": {
+        },
+        "interfaces": [
+          {
+            "ipAddr": "0.0.0.1",
+            "macAddr": "0:0:0:0:0:1",
+            "pcap": {
+              "enabled": true,
+              "promiscuous": false
+            }
+          }
+        ],
+        "position": {
+          "x": 100,
+          "y": 0,
+          "z": 0
+        },
+        "graphics": {"image": ""}
+      },
+      "node_2": {
+        "applications": {
+        },
+        "interfaces": [
+          {
+            "ipAddr": "0.0.0.2",
+            "macAddr": "0:0:0:0:0:2",
+            "pcap": {
+              "enabled": true,
+              "promiscuous": false
+            }
+          }
+        ],
+        "position": {
+          "x": -100,
+          "y": 0,
+          "z": 0
+        },
+        "graphics": {"image": ""}
+      },
+      "switch_1": {
+        "applications": {
+          "switch": {
+            "appTemplate": "switch"
+          },
+          "shutdownController": {
+            "appTemplate": "controller",
+            "name": "shutdown_controller",
+            "port": 0,
+            "coupling": {
+              "framework": "HELICS",
+              "simulator": "GLD",
+              "name": "91023_switch",
+              "commModel": "pubSub",
+              "subscriptions": [
+                {
+                  "name": "gld_federate/Bld91023_Measured_Voltage_A",
+                  "type": "double"
+                },
+                {
+                  "name": "gld_federate/Bld91023_Measured_Voltage_B",
+                  "type": "double"
+                },
+                {
+                  "name": "gld_federate/Bld91023_Measured_Voltage_C",
+                  "type": "double"
+                }
+              ]
+            },
+            "logic": [{"logicTemplate": "shutdown_logic"}],
+            "settlingTime": 120.0,
+            "ioMap": [
+              {
+                "name": "voltage_A",
+                "dataType": "double",
+                "value": 120.0,
+                "dirty": false
+              },
+              {
+                "name": "voltage_B",
+                "dataType": "double",
+                "value": 120.0,
+                "dirty": false
+              },
+              {
+                "name": "voltage_C",
+                "dataType": "double",
+                "value": 120.0,
+                "dirty": false
+              },
+              {
+                "name": "nominal_voltage",
+                "dataType": "double",
+                "value": 120.0,
+                "dirty": false
+              },
+              {
+                "name": "command",
+                "dataType": "string",
+                "value": "nodeUp",
+                "dirty": false
+              }
+            ]
+          }
+        },
+        "graphics": {
+          "image": ""
+        },
+        "interfaces": [
+          {
+            "macAddr": "0:0:0:0:0:3",
+            "pcap": {
+              "enabled": true,
+              "promiscuous": false
+            }
+          }
+        ],
+        "position": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "graphics": {"image": ""}
+      }
+    },
+    "mappings": [],
+    "topology": {
+      "channels": {
+        "1Gb-CSMA": {
+          "type" : "csma",
+          "delay" : "1ms",
+          "dataRate" : "1Gbps",
+          "packetLoss" : "0.0"
+        }
+      },
+      "subnets": {
+        "1_backbone": {
+          "networkAddr": "0.0.0.0",
+          "netmask": "255.255.255.0",
+          "links": [
+            {"interfaces": {"node_1": [0], "switch_1": [0]}},
+            {"interfaces": {"node_2": [0], "switch_1": [0]}}
+
+          ]
+        }
+      }
+    }
+  }
+}

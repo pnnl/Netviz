@@ -1,0 +1,40 @@
+build/
+dist/
+/packages/
+node_modules/
+/out/
+/env/
+server/uploads/
+server/projects/
+server/__pycache__/
+dist-python/
+.DS_Store
+*.py.swp
+*.pyc
+*.pyo
+.idea
+package-lock.json
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.eslintcache
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+src/d3graph/CINDER.code-workspace
+dist-python/

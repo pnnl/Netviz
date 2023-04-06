@@ -1,0 +1,23 @@
+{
+    "EdgeColors": {
+        "DefaultEdge": "#21A2FF",
+        "HTTP": "#FB4747",
+        "PhysicalEdge": "#FAB25F",
+        "TCP": "#21A2FF",
+        "UDP": "#47D645"
+    },
+    "EdgeWidth": {
+        "MaximumEdgeWidth": 10,
+        "VaryingEdgeWidth": true
+    },
+    "Labels": {
+        "EdgeFontSize": 14,
+        "NodeFontSize": 14,
+        "ShowEdgeLabels": true,
+        "ShowNodeLabels": true
+    },
+    "Layout": {
+        "CondenseMultipleEdgesBetweenNodes": true,
+        "HierarchicalLayout": true
+    }
+}

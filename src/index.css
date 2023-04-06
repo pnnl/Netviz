@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.error {
+  color: red;
+  border: 1 solid red;
+  border-radius: 4px;
+  padding: 5px 5px 5px 5px;
+}
+
+.dotSvgDiv {
+  border: 1 solid black;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway-VariableFont_wght.ttf') format('embedded-opentype'), /* Internet Explorer */
+  url('./fonts/Raleway-VariableFont_wght.ttf') format('woff2'), /* Super Modern Browsers */
+  url('./fonts/Raleway-VariableFont_wght.ttf') format('woff'), /* Pretty Modern Browsers */
+  url('./fonts/Raleway-VariableFont_wght.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('./fonts/Raleway-VariableFont_wght.ttf') format('svg'); /* Legacy iOS */
+}
+
+/* Generical form styles */
+
+.field-label {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  align-items: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #333333;
+}
+
+.disabled-label {
+  color: #CCCCCC;
+}
+
+.field-input {
+  background: #FFFFFF;
+  border: 1px solid #696969;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.disabled-input {
+  color: #CCCCCC;
+  border: 1px solid #CCCCCC;
+}
+
+.checkbox-input {
+  width: 15px;
+  height: 15px;
+}

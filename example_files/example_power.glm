@@ -1,0 +1,101 @@
+object substation {
+	name substation_1;
+	phases ABCN;
+	nominal_voltage 100;
+}
+
+object node {
+	name node_1;
+	phases ABCN;
+	nominal_voltage 100;
+}
+
+object node {
+	name node_2;
+	phases ABCN;
+	nominal_voltage 100;
+}
+
+object node {
+    name node_3;
+    phases ABCN;
+    nominal_voltage 100;
+}
+
+object node {
+    name node_4;
+    phases ABCN;
+    nominal_voltage 100;
+}
+
+object meter {
+    name meter_1;
+    phases ABCN;
+    nominal_voltage 100;
+}
+
+object meter {
+	name meter_2;
+	phases ABCN;
+	nominal_voltage 100;
+}
+
+object underground_line {
+	phases "ABCN";
+	name node_1-node_2;
+	from node_1;
+	to node_2;
+	length 100;
+}
+
+object underground_line {
+	phases "ABCN";
+	name node_2-node_3;
+	from node_2;
+	to node_3;
+	length 100;
+}
+
+object underground_line {
+	phases "ABCN";
+	name node_2-node_4;
+	from node_2;
+	to node_4;
+	length 100;
+}
+
+object underground_line {
+	phases "ABCN";
+	name substation_1-node_1;
+	from substation_1;
+	to node_1;
+	length 100;
+}
+
+object transformer {
+    name transformer_1;
+    phases "ABC";
+    from node_1;
+    to meter_1;
+}
+
+object transformer {
+    name transformer_2;
+    phases "ABC";
+    from node_2;
+    to meter_2;
+}
+
+object load {
+	name load_1;
+	parent meter_1;
+	phases ABCN;
+	nominal_voltage 100;
+}
+
+object load {
+	name load_2;
+	parent meter_2;
+	phases ABCN;
+	nominal_voltage 100;
+}
